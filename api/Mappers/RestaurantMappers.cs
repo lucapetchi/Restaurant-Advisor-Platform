@@ -14,10 +14,12 @@ namespace api.Mappers
             return new RestaurantDto
             {
                 Id = restaurantModel.Id,
+                Symbol=restaurantModel.Symbol,
                 Name = restaurantModel.Name,
                 Type = restaurantModel.Type,
-                Location_id = restaurantModel.Location_id,
-                Location = restaurantModel.Location.ToLocationDto(),
+                City = restaurantModel.City,
+                Country = restaurantModel.Country,
+                Address =restaurantModel.Address,
                 Phone = restaurantModel.Phone,
                 Price_Rating = restaurantModel.Price_Rating,
                 Comments = restaurantModel.Comments.Select(c => c.ToCommentDto()).ToList()
@@ -27,11 +29,14 @@ namespace api.Mappers
         {
             return new Restaurant
             {
+                Symbol=restDto.Symbol,
                 Name = restDto.Name,
                 Type = restDto.Type,
+                City = restDto.City,
+                Country = restDto.Country,
+                Address =restDto.Address,
                 Phone = restDto.Phone,
                 Price_Rating = restDto.Price_Rating,
-                Location = restDto.Location.ToLocationFromDTO(),
                 
             };
         }

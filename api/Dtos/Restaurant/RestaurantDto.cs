@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Routing;
 using api.Dtos.Comment;
-using api.Dtos.Location;
+//using api.Dtos.Location;
 
 namespace api.Dtos.Restaurant
 {
@@ -15,8 +15,14 @@ namespace api.Dtos.Restaurant
         public string Name { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
         
-        public int Location_id {get;set;}
-        public LocationDto? Location {get; set; }
+   
+        public string Country { get; set; } = string.Empty;
+
+        public string City { get; set; } = string.Empty;
+
+        public string Address { get; set; } = string.Empty;
+        
+        //public LocationDto? Location {get; set; }
 
         public string Phone {get; set;} = string.Empty;
 

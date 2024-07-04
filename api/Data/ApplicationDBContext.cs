@@ -19,7 +19,7 @@ namespace api.Data
         
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Location> Locations {get; set;}
+        //public DbSet<Location> Locations {get; set;}
         public DbSet<Portfolio> Portfolios { get; set; }
         
 

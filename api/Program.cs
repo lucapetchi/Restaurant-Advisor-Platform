@@ -90,7 +90,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+//builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 

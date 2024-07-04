@@ -102,6 +102,9 @@ namespace api.Repository
             existingRestaurant.Phone = restDto.Phone;
             existingRestaurant.Type = restDto.Type;
             existingRestaurant.Price_Rating = restDto.Price_Rating;
+            existingRestaurant.Address=restDto.Address;
+            existingRestaurant.City=restDto.City;
+            existingRestaurant.Country=restDto.Country;
             
 
             await _context.SaveChangesAsync();
