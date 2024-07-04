@@ -11,7 +11,7 @@ namespace api.Dtos.Account
         [Required]
         public string? Username { get; set; }
         [Required]
-        [EmailAddress]
+        [EmailAddress] //verifica daca e un email valid
         public string? Email { get; set; }
         [Required]
         public string? Password { get; set; }

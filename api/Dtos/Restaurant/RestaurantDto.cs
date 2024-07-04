@@ -14,14 +14,15 @@ namespace api.Dtos.Restaurant
         public string Symbol { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-
-        public LocationDto? location {get; set; }
+        
+        public int Location_id {get;set;}
+        public LocationDto? Location {get; set; }
 
         public string Phone {get; set;} = string.Empty;
 
         public int Price_Rating {get; set;} //range = 1-5
 
-         public List<CommentDto>? Comments { get; set; } 
+        public List<CommentDto>? Comments { get; set; } 
 
          
     }

@@ -7,7 +7,7 @@ using api.Models;
 
 namespace api.Mappers
 {
-    public static class StockMappers
+    public static class RestaurantMappers
     {
         public static RestaurantDto ToRestaurantDto(this Restaurant restaurantModel)
         {
@@ -16,7 +16,8 @@ namespace api.Mappers
                 Id = restaurantModel.Id,
                 Name = restaurantModel.Name,
                 Type = restaurantModel.Type,
-                //location = restaurantModel.location,
+                Location_id = restaurantModel.Location_id,
+                Location = restaurantModel.Location.ToLocationDto(),
                 Phone = restaurantModel.Phone,
                 Price_Rating = restaurantModel.Price_Rating,
                 Comments = restaurantModel.Comments.Select(c => c.ToCommentDto()).ToList()
@@ -28,9 +29,10 @@ namespace api.Mappers
             {
                 Name = restDto.Name,
                 Type = restDto.Type,
-                //location = restDto.location,
                 Phone = restDto.Phone,
                 Price_Rating = restDto.Price_Rating,
+                Location = restDto.Location.ToLocationFromDTO(),
+                
             };
         }
 

@@ -49,7 +49,7 @@ namespace api.Repository
             };
             if (queryObject.IsDecsending == true)
             {
-                comments = comments.OrderByDescending(c => c.CreatedOn);
+                comments = comments.OrderByDescending(c => c.Rating);
             }
             return await comments.ToListAsync();
         }
@@ -70,6 +70,7 @@ namespace api.Repository
 
             existingComment.Title = commentModel.Title;
             existingComment.Content = commentModel.Content;
+            existingComment.Rating = commentModel.Rating;
 
             await _context.SaveChangesAsync();
 

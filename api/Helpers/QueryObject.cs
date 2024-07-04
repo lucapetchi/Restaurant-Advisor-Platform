@@ -9,6 +9,7 @@ namespace api.Helpers
     {
         public string? Symbol { get; set; } = null;
         public string? Name { get; set; } = null;
+        public string? Type { get; set; } = null;
         public string? SortBy { get; set; } = null;
         public bool IsDecsending { get; set; } = false;
         public int PageNumber { get; set; } = 1;

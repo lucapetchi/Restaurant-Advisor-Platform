@@ -32,9 +32,9 @@ namespace api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var stocks = await _restRepo.GetAllAsync(query);
+            var restaurants = await _restRepo.GetAllAsync(query);
 
-            var stockDto = stocks.Select(s => s.ToRestaurantDto()).ToList();
+            var stockDto = restaurants.Select(s => s.ToRestaurantDto()).ToList();
 
             return Ok(stockDto);
         }

@@ -8,13 +8,13 @@ namespace api.Models{
 
     public class Location{
 
+        public int Id {get; set;}
+
         public string Country { get; set; } = string.Empty;
 
         public string City { get; set; } = string.Empty;
 
         public string Address { get; set; } = string.Empty;
-
-        public Restaurant? restaurant {get;set;}
     }
 
 }

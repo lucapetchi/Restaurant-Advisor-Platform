@@ -14,8 +14,10 @@ namespace api.Models
         public string Symbol { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
+        
+        public int Location_id {get; set; }
 
-        //public Location? location {get; set; }
+        public Location? Location {get; set;}
 
         public string Phone {get; set;} = string.Empty;
 
@@ -23,6 +25,6 @@ namespace api.Models
 
          public List<Comment> Comments { get; set; } = new List<Comment>();
 
-
+        public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
     }
 }

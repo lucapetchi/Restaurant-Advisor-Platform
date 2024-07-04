@@ -54,6 +54,11 @@ namespace api.Repository
                 restaurants = restaurants.Where(s => s.Symbol.Contains(query.Symbol));
             }
 
+             if (!string.IsNullOrWhiteSpace(query.Type))
+            {
+                restaurants = restaurants.Where(s => s.Type.Contains(query.Type));
+            }
+
             if (!string.IsNullOrWhiteSpace(query.SortBy))
             {
                 if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
@@ -61,7 +66,7 @@ namespace api.Repository
                     restaurants = query.IsDecsending ? restaurants.OrderByDescending(s => s.Symbol) : restaurants.OrderBy(s => s.Symbol);
                 }
             }
-
+             
             var skipNumber = (query.PageNumber - 1) * query.PageSize;
 
 

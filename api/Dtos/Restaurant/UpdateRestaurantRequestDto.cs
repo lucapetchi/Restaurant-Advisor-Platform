@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.Location;
 
 namespace api.Dtos.Restaurant
 {
@@ -21,6 +22,7 @@ namespace api.Dtos.Restaurant
         [MaxLength(10, ErrorMessage = " Phone cannot be over 10 over characters")]
         public string Phone {get; set;} = string.Empty;
 
+        public LocationDto Location {get; set;}
         [Required]
         [Range(1, 5)]
         public int Price_Rating {get; set;}

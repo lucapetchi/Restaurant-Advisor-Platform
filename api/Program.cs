@@ -1,9 +1,9 @@
 using api.Data;
-//using api.Interfaces;
+using api.Interfaces;
 using api.Models;
-//using api.Repository;
-//using api.Service;
-//using Microsoft.AspNetCore.Authentication.JwtBearer;
+using api.Repository;
+using api.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -44,24 +44,23 @@ builder.Services.AddSwaggerGen(option =>
         }
     });
 });
-/*
+
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
-*/
+
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-/*
+
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequiredLength = 12;
+    options.Password.RequiredLength = 8;
 })
 .AddEntityFrameworkStores<ApplicationDBContext>();
 
@@ -87,19 +86,18 @@ builder.Services.AddAuthentication(options =>
         )
     };
 });
+    
 
-
-builder.Services.AddScoped<IStockRepository, StockRepository>();
+builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
-builder.Services.AddScoped<IFMPService, FMPService>();
-builder.Services.AddHttpClient<IFMPService, FMPService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
-*/
+
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

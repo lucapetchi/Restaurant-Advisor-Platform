@@ -16,7 +16,7 @@ namespace api.Models
         public int Rating {get; set;} //Range e 1-5
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public int? RestaurantId { get; set; }
-        public  Restaurant Restaurant { get; set; }
+        public  Restaurant? Restaurant { get; set; }
         public  string AppUserId { get; set; }
         public  AppUser AppUser { get; set; }
     }
