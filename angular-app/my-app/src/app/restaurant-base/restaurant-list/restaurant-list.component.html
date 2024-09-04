@@ -1,0 +1,108 @@
+<div class="filters">
+  <label for="type">Type:</label>
+  <select id="type" [(ngModel)]="selectedType" (change)="applyFilters()">
+    <option value="">All Types</option>
+    <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+  </select>
+
+  <label for="price-rating">Price Rating:</label>
+  <select id="price-rating" [(ngModel)]="selectedPriceRating" (change)="applyFilters()">
+    <option value="">All Ratings</option>
+    <option *ngFor="let rating of priceRatings" [value]="rating">{{ rating }}</option>
+  </select>
+</div>
+
+
+<div class="restaurant-list">
+  <app-restaurant-detail
+    *ngFor="let restaurant of restaurants"
+    [detail]="restaurant"
+    (remove)="handleRemove($event)"
+    (edit)="handleEdit($event)">
+  </app-restaurant-detail>
+</div>
+
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }}</span>
+  <button (click)="nextPage()">Next</button>
+</div>
+
+  <div *ngIf="editingRestaurant" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Restaurant</h2>
+        <button class="close-btn" (click)="cancelEdit()">×</button>
+      </div>
+      <form (ngSubmit)="saveEdit()">
+        <div class="modal-body">
+          <label for="name">Name:</label>
+          <input id="name" [(ngModel)]="editingRestaurant.name" name="name" required>
+  
+          <label for="type">Type:</label>
+          <input id="type" [(ngModel)]="editingRestaurant.type" name="type" required>
+  
+          <label for="country">Country:</label>
+          <input id="country" [(ngModel)]="editingRestaurant.country" name="country" required>
+  
+          <label for="city">City:</label>
+          <input id="city" [(ngModel)]="editingRestaurant.city" name="city" required>
+  
+          <label for="address">Address:</label>
+          <input id="address" [(ngModel)]="editingRestaurant.address" name="address" required>
+  
+          <label for="phone">Phone:</label>
+          <input id="phone" [(ngModel)]="editingRestaurant.phone" name="phone" required>
+  
+          <label for="price_rating">Price Rating:</label>
+          <input id="price_rating" type="number" [(ngModel)]="editingRestaurant.price_Rating" name="price_Rating" required>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Add Restaurant Modal -->
+  <div *ngIf="addingRestaurant" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add Restaurant</h2>
+        <button class="close-btn" (click)="cancelAdd()">×</button>
+      </div>
+      <form (ngSubmit)="saveAdd()">
+        <div class="modal-body">
+          <label for="name">Name:</label>
+          <input id="name" [(ngModel)]="addingRestaurant.name" name="name" required>
+  
+          <label for="type">Type:</label>
+          <input id="type" [(ngModel)]="addingRestaurant.type" name="type" required>
+  
+          <label for="country">Country:</label>
+          <input id="country" [(ngModel)]="addingRestaurant.country" name="country" required>
+  
+          <label for="city">City:</label>
+          <input id="city" [(ngModel)]="addingRestaurant.city" name="city" required>
+  
+          <label for="address">Address:</label>
+          <input id="address" [(ngModel)]="addingRestaurant.address" name="address" required>
+  
+          <label for="phone">Phone:</label>
+          <input id="phone" [(ngModel)]="addingRestaurant.phone" name="phone" required>
+  
+          <label for="price_rating">Price Rating:</label>
+          <input id="price_rating" type="number" [(ngModel)]="addingRestaurant.price_Rating" name="price_Rating" required>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" (click)="cancelAdd()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+
+  

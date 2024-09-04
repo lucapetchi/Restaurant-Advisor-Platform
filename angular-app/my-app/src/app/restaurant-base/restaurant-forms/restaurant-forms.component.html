@@ -1,0 +1,39 @@
+<form #form="ngForm" (ngSubmit)="handleSubmit(form)">
+    Restaurant Name:
+    <input [(ngModel)]="restaurant.name" name="name" [ngModelOptions]="{standalone:true}" />
+  <label>
+    <input type="radio" 
+            name="isOpen" 
+            [value]="true"
+            required 
+            #restaurantName="ngModel"
+            [ngModel]="restaurant.isOpen" 
+            (ngModelChange)="toggleIsOpen($event)"
+            /> Restaurant is Open
+  </label>
+  <label>
+    <input 
+      type="radio" 
+      name="isOpen" 
+      [value]="false" 
+      [ngModel]="restaurant.isOpen" 
+    /> Restaurant is Not Open
+  </label>
+  <label>
+    <input type="checkbox" name="acceptTerms" id="acceptTerms" class="form-check-input" required [(ngModel)]="restaurant.acceptTerms">Accept Terms?
+    
+  </label>
+  <label>
+    Restaurant Type:
+    <select name="restaurantType" [ngModel]="restaurant.type">
+      <option *ngFor="let type of restaurantType" [value]="type.key" [selected]="type.value === restaurant.type">{{ type.value }}</option>
+    </select>
+  </label>
+  <button type="submit" [disabled]="!form.valid">Save</button>
+  <button type="button" (click)="back()">Go Back</button>
+  </form>
+  <div>
+    MODEL: {{ restaurant | json }}
+    FORM: {{ form.value | json }}
+  </div>
+  <app-comment></app-comment>

@@ -55,6 +55,12 @@ namespace api.Repository
                 restaurants = restaurants.Where(s => s.Type.Contains(query.Type));
             }
 
+            if (query.PriceRating.HasValue)
+            {
+                restaurants = restaurants.Where(s => s.Price_Rating == query.PriceRating.Value);
+            }
+
+
             if (!string.IsNullOrWhiteSpace(query.SortBy))
             {
                 if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
