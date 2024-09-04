@@ -61,13 +61,13 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        [Route("{symbol:alpha}")]
-        public async Task<IActionResult> Create([FromRoute] string symbol, CreateCommentDto commentDto)
+        [Route("{id:int}")]
+        public async Task<IActionResult> Create([FromRoute] int id, CreateCommentDto commentDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var rest = await _restRepo.GetBySymbolAsync(symbol);
+            var rest = await _restRepo.GetByIdAsync(id);
             if (rest == null)
             {
                 return BadRequest("Restaurant does not exist");

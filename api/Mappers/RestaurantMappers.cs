@@ -14,7 +14,6 @@ namespace api.Mappers
             return new RestaurantDto
             {
                 Id = restaurantModel.Id,
-                Symbol=restaurantModel.Symbol,
                 Name = restaurantModel.Name,
                 Type = restaurantModel.Type,
                 City = restaurantModel.City,
@@ -29,7 +28,7 @@ namespace api.Mappers
         {
             return new Restaurant
             {
-                Symbol=restDto.Symbol,
+                
                 Name = restDto.Name,
                 Type = restDto.Type,
                 City = restDto.City,
