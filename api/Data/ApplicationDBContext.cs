@@ -20,25 +20,25 @@ namespace api.Data
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Comment> Comments { get; set; }
         //public DbSet<Location> Locations {get; set;}
-        public DbSet<Portfolio> Portfolios { get; set; }
-        
+        //public DbSet<Portfolio> Portfolios { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<Portfolio>(x => x.HasKey(p => new { p.AppUserId, p.RestaurantId }));
+            //builder.Entity<Portfolio>(x => x.HasKey(p => new { p.AppUserId, p.RestaurantId }));
 
-            builder.Entity<Portfolio>()
-                .HasOne(u => u.AppUser)
-                .WithMany(u => u.Portfolios)
-                .HasForeignKey(p => p.AppUserId);
+            //builder.Entity<Portfolio>()
+            //    .HasOne(u => u.AppUser)
+            //    .WithMany(u => u.Portfolios)
+            //    .HasForeignKey(p => p.AppUserId);
 
-            builder.Entity<Portfolio>()
-                .HasOne(u => u.Restaurant)
-                .WithMany(u => u.Portfolios)
-                .HasForeignKey(p => p.RestaurantId);
+            //builder.Entity<Portfolio>()
+            //    .HasOne(u => u.Restaurant)
+            //    .WithMany(u => u.Portfolios)
+            //    .HasForeignKey(p => p.RestaurantId);
+        }
 
-            
 
 
             List<IdentityRole> roles = new List<IdentityRole>
@@ -54,7 +54,6 @@ namespace api.Data
                     NormalizedName = "USER"
                 },
             };
-            builder.Entity<IdentityRole>().HasData(roles);
+            //builder.Entity<IdentityRole>().HasData(roles);
         }
     }
-}

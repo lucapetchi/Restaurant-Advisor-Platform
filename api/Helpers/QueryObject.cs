@@ -7,12 +7,14 @@ namespace api.Helpers
 {
     public class QueryObject
     {
-        public string? Symbol { get; set; } = null;
+        public int? Id { get; set; } = null;
         public string? Name { get; set; } = null;
         public string? Type { get; set; } = null;
         public string? SortBy { get; set; } = null;
         public bool IsDecsending { get; set; } = false;
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
+
+        public int? PriceRating { get; set; }  // refactor query object to filter price rating
     }
 }

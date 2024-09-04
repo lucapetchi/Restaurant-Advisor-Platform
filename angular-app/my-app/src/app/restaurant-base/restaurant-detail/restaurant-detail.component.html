@@ -1,0 +1,20 @@
+
+<div class="restaurant-card">
+  <div class="restaurant-item">
+    <img [src]="getImageUrl(detail.name)" alt="{{ detail.name }}" class="restaurant-image" />
+    <div class="restaurant-details">
+      <h2 class="restaurant-name">{{ detail.name }}</h2>
+      <div class="restaurant-location">{{ detail.city }}, {{ detail.country }}</div>
+      <div class="restaurant-type">Type: {{ detail.type }}</div>
+      <div class="restaurant-comments">Comments: {{ detail.comments.length }}</div>
+      <div class="restaurant-rating">
+        <span *ngFor="let star of [1,2,3,4,5]" class="star" [class.filled]="star <= detail.price_Rating">$</span>
+      </div>
+
+      <div class="restaurant-actions">
+        <button [routerLink]="['/restaurant', detail.id]">Details</button>
+        <button class="not-interested-btn" (click)="onRemove()">Not Interested</button>
+      </div>
+    </div>
+  </div>
+</div>

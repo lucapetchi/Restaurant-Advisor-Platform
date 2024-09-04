@@ -12,7 +12,7 @@ namespace api.Interfaces
     {
         Task<List<Restaurant>> GetAllAsync(QueryObject query);
         Task<Restaurant?> GetByIdAsync(int id);
-        Task<Restaurant?> GetBySymbolAsync(string symbol);
+        Task<Restaurant?> GetByNameAsync(string name);
         Task<Restaurant> CreateAsync(Restaurant restaurantModel);
         Task<Restaurant?> UpdateAsync(int id, UpdateRestaurantRequestDto restaurantDto);
         Task<Restaurant?> DeleteAsync(int id);

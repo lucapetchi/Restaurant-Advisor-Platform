@@ -43,9 +43,9 @@ namespace api.Repository
         {
             var comments = _context.Comments.Include(a => a.AppUser).AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            if (queryObject.Id!= 0 )
             {
-                comments = comments.Where(s => s.Restaurant.Symbol == queryObject.Symbol);
+                comments = comments.Where(s => s.Restaurant.Id == queryObject.Id);
             };
             if (queryObject.IsDecsending == true)
             {

@@ -1,0 +1,147 @@
+.restaurant-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #777;
+  }
+}
+
+.restaurant-info {
+  margin-bottom: 20px;
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #444;
+  }
+
+  p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+  }
+}
+
+.restaurant-rating .star {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.restaurant-rating .star.filled {
+  color: #ff6f61;
+}
+
+.restaurant-comments {
+  margin-top: 20px;
+
+  h3 {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 15px;
+  }
+
+  .comment {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+
+    p {
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    small {
+      font-size: 0.9em;
+      color: #777;
+    }
+  }
+
+  ng-template p {
+    font-size: 1em;
+    color: #999;
+    text-align: center;
+  }
+}
+
+.comment-form {
+  margin-top: 30px;
+
+  h3 {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #333;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #ff6f61;
+        outline: none;
+      }
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    button[type="submit"] {
+      align-self: flex-start;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #218838;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+  

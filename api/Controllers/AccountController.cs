@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Account;
@@ -18,7 +19,8 @@ namespace api.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly SignInManager<AppUser> _signinManager;
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService
+            , SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _tokenService = tokenService;
@@ -93,6 +95,39 @@ namespace api.Controllers
             {
                 return StatusCode(500, e);
             }
+        }
+        [HttpGet("user")]
+        public async Task<IActionResult> GetUser()
+        {
+     
+            var authHeader = Request.Headers["Authorization"].ToString();
+            var token = authHeader.StartsWith("Bearer ") ? authHeader.Substring("Bearer ".Length).Trim() : null;
+            if (string.IsNullOrEmpty(token))
+                return Unauthorized("Token is missing");
+            
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+
+            if (jwtToken == null)
+                return Unauthorized("Invalid token");
+
+            var username = jwtToken.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.GivenName)?.Value;
+
+            if (string.IsNullOrEmpty(username))
+                return Unauthorized("Token does not contain a valid username");
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user == null)
+                return NotFound("User not found");
+
+          
+            return Ok(new NewUserDto
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                Token = token
+            });
         }
     }
 }

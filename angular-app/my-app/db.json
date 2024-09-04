@@ -1,0 +1,102 @@
+{
+  "restaurant": [
+    {
+      "id": "1",
+      "name": "Alt-Shift",
+      "type": "European",
+      "isOpen": true,
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": "Str. Constantin Mille",
+      "phone": "0721020282",
+      "price_rating": 4,
+      "image": "http://192.168.56.1:8081/images/restaurants/alt-shift.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Dristor-Doner",
+      "type": "Fast-Food",
+      "isOpen": true,
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": "Bvd. Tineretului",
+      "phone": "0721020282",
+      "price_rating": 5,
+      "image": "http://192.168.56.1:8081/images/restaurants/dristor-doner.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Chopstix",
+      "type": "Fast-Food",
+      "isOpen": true,
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": "Bvd. Unirii",
+      "phone": "0721020282",
+      "price_rating": 2,
+      "image": "http://192.168.56.1:8081/images/restaurants/chopstix.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Centrale",
+      "type": "Italian",
+      "isOpen": false,
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": "Calea Victoriei 666",
+      "phone": "0721020282",
+      "price_rating": 4,
+      "image": "http://192.168.56.1:8081/images/restaurants/centrale.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Mandaloun",
+      "type": "Lebanese",
+      "isOpen": true,
+      "country": "Romania",
+      "city": "Bucharest",
+      "address": "Bvd. 1 Mai",
+      "phone": "0721020282",
+      "price_rating": 4,
+      "image": "http://192.168.56.1:8081/images/restaurants/naser.jpg"
+    },
+    {
+      "id": 6,
+      "name": "adas",
+      "type": "ads",
+      "isOpen": true,
+      "country": "asd",
+      "city": "asd",
+      "address": "asd",
+      "phone": "asd",
+      "price_rating": 2,
+      "acceptTerms": true,
+      "image": "sad"
+    },
+    {
+      "id": 7,
+      "name": "asdasd",
+      "type": "sadasdsa",
+      "isOpen": false,
+      "country": "saddsa",
+      "city": "dasdsa",
+      "address": "sadads",
+      "phone": "dsadsa",
+      "price_rating": 2,
+      "acceptTerms": false,
+      "image": "dsasad"
+    }
+  ],
+  "comment" : [
+    {
+      "Id" : 10,
+      "Title": "Nice experience",
+      "Content" : "Content Comment",
+      "Rating": 4,
+      "CreatedOn": "08/08/24",
+      "RestaurantId": 2,
+      "AppUserId" : 10,
+      "AppUser": null
+    }
+  ]
+}

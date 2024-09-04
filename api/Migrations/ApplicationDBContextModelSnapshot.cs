@@ -17,7 +17,7 @@ namespace api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.6")
+                .HasAnnotation("ProductVersion", "8.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -47,20 +47,6 @@ namespace api.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "aa9b335d-c031-4f1b-b197-60858f99ca8f",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "c1606d7c-c6db-4685-9707-787052d78576",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -272,21 +258,6 @@ namespace api.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("api.Models.Portfolio", b =>
-                {
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("RestaurantId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AppUserId", "RestaurantId");
-
-                    b.HasIndex("RestaurantId");
-
-                    b.ToTable("Portfolios");
-                });
-
             modelBuilder.Entity("api.Models.Restaurant", b =>
                 {
                     b.Property<int>("Id")
@@ -317,10 +288,6 @@ namespace api.Migrations
 
                     b.Property<int>("Price_Rating")
                         .HasColumnType("int");
-
-                    b.Property<string>("Symbol")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -399,35 +366,9 @@ namespace api.Migrations
                     b.Navigation("Restaurant");
                 });
 
-            modelBuilder.Entity("api.Models.Portfolio", b =>
-                {
-                    b.HasOne("api.Models.AppUser", "AppUser")
-                        .WithMany("Portfolios")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("api.Models.Restaurant", "Restaurant")
-                        .WithMany("Portfolios")
-                        .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Restaurant");
-                });
-
-            modelBuilder.Entity("api.Models.AppUser", b =>
-                {
-                    b.Navigation("Portfolios");
-                });
-
             modelBuilder.Entity("api.Models.Restaurant", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }
