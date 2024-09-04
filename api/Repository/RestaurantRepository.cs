@@ -49,10 +49,6 @@ namespace api.Repository
                 restaurants = restaurants.Where(s => s.Name.Contains(query.Name));
             }
 
-            if (!string.IsNullOrWhiteSpace(query.Symbol))
-            {
-                restaurants = restaurants.Where(s => s.Symbol.Contains(query.Symbol));
-            }
 
              if (!string.IsNullOrWhiteSpace(query.Type))
             {
@@ -63,7 +59,7 @@ namespace api.Repository
             {
                 if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
                 {
-                    restaurants = query.IsDecsending ? restaurants.OrderByDescending(s => s.Symbol) : restaurants.OrderBy(s => s.Symbol);
+                    restaurants = query.IsDecsending ? restaurants.OrderByDescending(s => s.Id) : restaurants.OrderBy(s => s.Id);
                 }
             }
              
@@ -78,9 +74,9 @@ namespace api.Repository
             return await _context.Restaurants.Include(c => c.Comments).FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<Restaurant?> GetBySymbolAsync(string symbol)
+        public async Task<Restaurant?> GetByNameAsync(string name)
         {
-            return await _context.Restaurants.FirstOrDefaultAsync(s => s.Symbol == symbol);
+            return await _context.Restaurants.FirstOrDefaultAsync(s => s.Name == name);
         }
 
         public Task<bool> RestaurantExists(int id)
@@ -97,7 +93,6 @@ namespace api.Repository
                 return null;
             }
 
-            existingRestaurant.Symbol = restDto.Symbol;
             existingRestaurant.Name = restDto.Name;
             existingRestaurant.Phone = restDto.Phone;
             existingRestaurant.Type = restDto.Type;

@@ -25,7 +25,7 @@ namespace api.Controllers
             _context = context;
         }
 
-         [HttpGet]
+        [HttpGet]
         [Authorize]
         public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
         {
@@ -34,9 +34,9 @@ namespace api.Controllers
 
             var restaurants = await _restRepo.GetAllAsync(query);
 
-            var stockDto = restaurants.Select(s => s.ToRestaurantDto()).ToList();
+            var restDto = restaurants.Select(s => s.ToRestaurantDto()).ToList();
 
-            return Ok(stockDto);
+            return Ok(restDto);
         }
 
         [HttpGet("{id:int}")]
@@ -101,6 +101,7 @@ namespace api.Controllers
 
             return NoContent();
         }
+
 
     }
 

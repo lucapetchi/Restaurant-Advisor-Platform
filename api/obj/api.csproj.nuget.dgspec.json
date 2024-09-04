@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\petch\\Desktop\\MDS\\api\\api.csproj": {}
+    "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\petch\\Desktop\\MDS\\api\\api.csproj": {
+    "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\petch\\Desktop\\MDS\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\petch\\Desktop\\MDS\\api\\api.csproj",
+        "projectPath": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\api.csproj",
         "packagesPath": "C:\\Users\\petch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\petch\\Desktop\\MDS\\api\\obj\\",
+        "outputPath": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\petch\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,53 +45,57 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "1": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -99,7 +103,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.7.0, )"
             }
           },
           "imports": [
