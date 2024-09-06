@@ -19,33 +19,30 @@ export class AuthComponent implements OnInit, AfterViewInit {
   @ViewChild('loginModal', { static: false }) loginModal!: ElementRef;
   @ViewChild('registerModal', { static: false }) registerModal!: ElementRef;
 
-  constructor(public authService: AuthService, private http: HttpClient) { 
-   
-  }
+  successMessage: string | null = null;
+
+  constructor(public authService: AuthService, private http: HttpClient) {
+    this.successMessage = `Welcome back, ${this.user.userName}! You are all set.`;
+   }
 
   ngOnInit(): void {
     this.authService.getMe().subscribe({
-        next: (response) => {
-          this.authService.currentUserSig.set(response);
-        
-        },
-        error: () => {
-          this.authService.currentUserSig.set(null);
-
-        },
-      });
+      next: (response) => {
+        this.authService.currentUserSig.set(response);
+      },
+      error: () => {
+        this.authService.currentUserSig.set(null);
+      },
+    });
   }
 
-  ngAfterViewInit(): void {
-   
-  }
+  ngAfterViewInit(): void { }
 
   register(user: User) {
     this.authService.register(user).subscribe(() => {
       this.authService.currentUserSig.set(user);
-      
       this.hideModal(this.registerModal);
-      
+      this.successMessage = `Welcome, ${user.userName}! You are all set.`;
     });
   }
 
@@ -54,6 +51,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
       this.authService.currentUserSig.set(user);
       console.log(user);
       this.hideModal(this.loginModal);
+      this.successMessage = `Welcome back, ${user.userName}! You are all set.`;
     });
     console.log(this.authService.currentUserSig);
   }
@@ -62,6 +60,7 @@ export class AuthComponent implements OnInit, AfterViewInit {
     console.log('logout');
     localStorage.setItem('token', '');
     this.authService.currentUserSig.set(null);
+    this.successMessage = null; // Clear the success message on logout
   }
 
   private hideModal(modal: ElementRef) {

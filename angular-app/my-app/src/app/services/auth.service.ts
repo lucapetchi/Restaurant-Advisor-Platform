@@ -2,20 +2,20 @@ import { Injectable, signal } from '@angular/core';
 import { User } from '../models/user';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-const RESTAURANT_API = 'http://localhost:5079/api/account'
+const RESTAURANT_API = 'http://localhost:5079/api/account' // URL pt CRUD Restaurant 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  currentUserSig = signal<User | undefined | null>(undefined);
+  currentUserSig = signal<User | undefined | null>(undefined); // signal pentru pastrarea sesiunii
   constructor(private http:HttpClient ) {
     if (localStorage.getItem('token')){
       this.restoreUser();
     }
 
    }
-
+  // Metode autentificare
   public register(user: User): Observable<any> {
     return this.http.post<any>(`${RESTAURANT_API}/register`, user).pipe(
       tap(response => this.setUser(response))
@@ -32,7 +32,11 @@ export class AuthService {
     return this.http.get<any>(`${RESTAURANT_API}/user`);
   }
 
-public isLoggedIn(): boolean {
+
+//
+
+
+public isLoggedIn(): boolean {          //
   return !!localStorage.getItem('token');
 }
 private setUser(response: any): void {
@@ -42,13 +46,13 @@ private setUser(response: any): void {
     email: response.email,
     password: ''
   };
-  localStorage.setItem('token', user.token); // Save token to localStorage
+  localStorage.setItem('token', user.token); // Token salvat in local storage in browser
   this.currentUserSig.set(user);
 }
 private restoreUser(): void {
   const token = localStorage.getItem('token');
-  if (token) {
-    this.http.get<User>(`${RESTAURANT_API}/user`, {
+  if (token) {                                        // daca avem token atunci putem restaura sesiunea pentru a nu ne loga iar
+    this.http.get<User>(`${RESTAURANT_API}/user`, { 
       headers: {
         Authorization: `Bearer ${token}`
       }

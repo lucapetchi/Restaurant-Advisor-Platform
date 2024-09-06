@@ -6,11 +6,11 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './auth/auth.interceptor';
 
-
-const routes: Routes = [
+//rute aici cat si in module restaurant
+const routes: Routes = [ 
   { path: '', component: AuthComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'restaurant', loadChildren: () => import('./restaurant-base/restaurant-base.module').then(m => m.RestaurantBaseModule) },
+  { path: 'restaurant', loadChildren: () => import('./restaurant-base/restaurant-base.module').then(m => m.RestaurantBaseModule) }, 
   { path: '**', component:  NotfoundComponent },
 
 ];

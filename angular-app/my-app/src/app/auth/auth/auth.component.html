@@ -8,7 +8,9 @@
   </button>
 </div>
 
-
+<div *ngIf="authService.currentUserSig() !== null" class="alert alert-success mt-3">
+  {{ successMessage }}
+</div>
 
 <!-- Modals Container -->
 <div id="modals-container">

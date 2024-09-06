@@ -1,62 +1,67 @@
 <div *ngIf="restaurant" class="restaurant-page-container">
-  <div class="restaurant-header">
-    <h1>{{ restaurant.name }}</h1>
-    <p>{{ restaurant.type }}</p>
+  <!-- Background Image -->
+  <div class="background-image-container">
+    <img [src]="getImageUrl(restaurant.name)" alt="{{ restaurant.name }}" class="background-image" />
   </div>
-
-  <div class="restaurant-info">
-    <h3>Location</h3>
-    <p>{{ restaurant.address }}</p>
-    <p>{{ restaurant.city }}, {{ restaurant.country }}</p>
-    <p>Phone: {{ restaurant?.phone }}</p>
-
-    <h3>Price Rating</h3>
-    <div class="restaurant-rating">
-      <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" [class.filled]="star <= restaurant.price_Rating">$</span>
+  
+  <!-- Content -->
+  <div class="content-container">
+    <div class="restaurant-header">
+      <h1>{{ restaurant.name }}</h1>
+      <p>{{ restaurant.type }}</p>
     </div>
-  </div>
 
-  <div class="restaurant-comments">
-    <h3>Comments</h3>
-    <div *ngIf="restaurant?.comments?.length > 0; else noComments">
-      <div *ngFor="let comment of restaurant?.comments" class="comment">
-        <p>{{ comment.content }}</p>
-        <small>By {{ comment.createdBy }} on {{ comment.createdOn | date:'medium' }}</small>
+    <div class="restaurant-info">
+      <h3>Location</h3>
+      <p>{{ restaurant.address }}</p>
+      <p>{{ restaurant.city }}, {{ restaurant.country }}</p>
+      <p>Phone: {{ restaurant?.phone }}</p>
+
+      <h3>Price Rating</h3>
+      <div class="restaurant-rating">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" class="star" [class.filled]="star <= restaurant.price_Rating">$</span>
       </div>
     </div>
-    <ng-template #noComments>
-      <p>No comments yet.</p>
-    </ng-template>
-  </div>
 
-  <div class="comment-form">
-    <h3>Add a Comment</h3>
-    <form (ngSubmit)="onSubmit(restaurant.id)" #commentForm="ngForm">
-      <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" [(ngModel)]="newComment.title" name="title" required>
+    <div class="restaurant-comments">
+      <h3>Comments</h3>
+      <div *ngIf="restaurant?.comments?.length > 0; else noComments">
+        <div *ngFor="let comment of restaurant?.comments" class="comment">
+          <h4 class="comment-title">{{ comment.title }}</h4>
+          <p class="comment-content">{{ comment.content }}</p>
+          <small class="comment-info">By {{ comment.createdBy }} on {{ comment.createdOn | date:'medium' }}</small>
+        </div>
       </div>
-      <div>
-        <label for="content">Content</label>
-        <textarea id="content" [(ngModel)]="newComment.content" name="content" required></textarea>
-      </div>
-      <div>
-        <label for="rating">Rating</label>
-        <select id="rating" [(ngModel)]="newComment.rating" name="rating" required>
-          <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
-        </select>
-      </div>
-      <button type="submit" [disabled]="!commentForm.form.valid">Submit</button>
-    </form>
+      <ng-template #noComments>
+        <p>No comments yet.</p>
+      </ng-template>
+    </div>
+
+    <div class="comment-form">
+      <h3>Add a Comment</h3>
+      <form (ngSubmit)="onSubmit(restaurant.id)" #commentForm="ngForm">
+        <div>
+          <label for="title">Title</label>
+          <input type="text" id="title" [(ngModel)]="newComment.title" name="title" required>
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <textarea id="content" [(ngModel)]="newComment.content" name="content" required></textarea>
+        </div>
+        <div>
+          <label for="rating">Rating</label>
+          <select id="rating" [(ngModel)]="newComment.rating" name="rating" required>
+            <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+          </select>
+        </div>
+        <button type="submit" [disabled]="!commentForm.form.valid">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
 
 <div *ngIf="restaurant" class="restaurant-page-container">
-  <!-- Other restaurant details -->
-
+  <!-- Map -->
   <h3>Location on Map</h3>
   <app-map [address]="restaurant.address" [city]="restaurant.city" [country]="restaurant.country"></app-map>
-
-
-  <!-- Comments and other sections -->
 </div>

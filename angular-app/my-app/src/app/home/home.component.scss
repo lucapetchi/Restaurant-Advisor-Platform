@@ -1,0 +1,98 @@
+.home-container {
+    .hero-section {
+      // Uncomment and set background image if desired
+       background: url('http://192.168.1.133:8080/path-to-hero-image.jpg') center center/cover no-repeat;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+  
+      .hero-content {
+        max-width: 600px;
+        margin: 0 auto;
+  
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+        }
+  
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 30px;
+        }
+  
+        .search-bar-container {
+          .search-bar {
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+          }
+        }
+      }
+    }
+  
+    .featured-restaurants {
+      padding: 20px;
+      text-align: center;
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+  
+      .restaurant-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+  
+        app-restaurant-card {
+          width: 300px; // Adjust the width to make cards smaller
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+      }
+    }
+  
+    .user-reviews {
+      padding: 20px;
+      text-align: center;
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+  
+      .review-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        .review-card {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 15px;
+          margin: 10px 0;
+          max-width: 500px;
+          text-align: center;
+  
+          p {
+            font-size: 1rem;
+            margin: 10px 0;
+          }
+  
+          strong {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+  

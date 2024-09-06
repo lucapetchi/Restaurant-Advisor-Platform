@@ -1,10 +1,40 @@
 .restaurant-page-container {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure no overflow from content */
+}
+
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Position the image behind the content */
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%); /* Darkens the image for text readability */
+}
+
+.content-container {
+  position: relative;
+  z-index: 1; /* Ensure content is above the background image */
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .restaurant-header {
@@ -61,13 +91,20 @@
     padding: 10px;
     border-bottom: 1px solid #eee;
 
-    p {
+    .comment-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .comment-content {
       font-size: 1em;
       color: #333;
       margin-bottom: 5px;
     }
 
-    small {
+    .comment-info {
       font-size: 0.9em;
       color: #777;
     }
