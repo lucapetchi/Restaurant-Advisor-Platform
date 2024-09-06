@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\mappers\\commentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\mappers\\commentmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\mappers\\restaurantmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\mappers\\restaurantmappers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\dtos\\restaurant\\restaurantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\dtos\\restaurant\\restaurantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\repository\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\repository\\restaurantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\repository\\restaurantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\helpers\\queryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\helpers\\queryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|solutionrelative:api\\models\\restaurant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03114504-44C7-45B9-A20E-CC1788442568}|api\\api.csproj|c:\\users\\petch\\source\\repos\\lucapetchi\\mds\\api\\helpers\\commentqueryobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +78,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RestaurantMappers.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Mappers\\RestaurantMappers.cs",
+              "RelativeDocumentMoniker": "api\\Mappers\\RestaurantMappers.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Mappers\\RestaurantMappers.cs",
+              "RelativeToolTip": "api\\Mappers\\RestaurantMappers.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T17:39:46.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RestaurantDto.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Dtos\\Restaurant\\RestaurantDto.cs",
+              "RelativeDocumentMoniker": "api\\Dtos\\Restaurant\\RestaurantDto.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Dtos\\Restaurant\\RestaurantDto.cs",
+              "RelativeToolTip": "api\\Dtos\\Restaurant\\RestaurantDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T17:37:25.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Controllers\\CommentController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\CommentController.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Controllers\\CommentController.cs",
+              "RelativeToolTip": "api\\Controllers\\CommentController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T17:36:23.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Models\\Comment.cs",
+              "RelativeToolTip": "api\\Models\\Comment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T19:47:42.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CommentMappers.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Mappers\\CommentMappers.cs",
+              "RelativeDocumentMoniker": "api\\Mappers\\CommentMappers.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Mappers\\CommentMappers.cs",
+              "RelativeToolTip": "api\\Mappers\\CommentMappers.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T19:46:36.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Repository\\CommentRepository.cs",
+              "RelativeDocumentMoniker": "api\\Repository\\CommentRepository.cs",
+              "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Repository\\CommentRepository.cs",
+              "RelativeToolTip": "api\\Repository\\CommentRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T19:46:19.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RestaurantRepository.cs",
               "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Repository\\RestaurantRepository.cs",
               "RelativeDocumentMoniker": "api\\Repository\\RestaurantRepository.cs",
@@ -62,8 +164,7 @@
               "RelativeToolTip": "api\\Repository\\RestaurantRepository.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAgwCwAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:56:38.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T13:56:38.102Z"
             },
             {
               "$type": "Document",
@@ -73,13 +174,14 @@
               "RelativeDocumentMoniker": "api\\Models\\Restaurant.cs",
               "ToolTip": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Models\\Restaurant.cs",
               "RelativeToolTip": "api\\Models\\Restaurant.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:58:09.609Z"
+              "WhenOpened": "2024-09-04T13:58:09.609Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "CommentQueryObject.cs",
               "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Helpers\\CommentQueryObject.cs",
               "RelativeDocumentMoniker": "api\\Helpers\\CommentQueryObject.cs",
@@ -91,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "QueryObject.cs",
               "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Helpers\\QueryObject.cs",
               "RelativeDocumentMoniker": "api\\Helpers\\QueryObject.cs",
@@ -103,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "RestaurantController.cs",
               "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Controllers\\RestaurantController.cs",
               "RelativeDocumentMoniker": "api\\Controllers\\RestaurantController.cs",
@@ -115,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "ApplicationDBContext.cs",
               "DocumentMoniker": "C:\\Users\\petch\\source\\repos\\lucapetchi\\MDS\\api\\Data\\ApplicationDBContext.cs",
               "RelativeDocumentMoniker": "api\\Data\\ApplicationDBContext.cs",

@@ -1,1 +1,45 @@
-<p>IMI place mult angular</p>
+<div class="home-container">
+
+    
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Discover Your Next Favorite Restaurant</h1>
+        <p>Search for restaurants, read reviews, and enjoy great dining experiences.</p>
+        <div class="search-bar-container">
+          <input
+            type="text"
+            class="form-control search-bar"
+            placeholder="Search for restaurants, cuisines, or locations..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+          />
+        </div>
+      </div>
+    </section>
+  
+ 
+    <section class="featured-restaurants">
+      <h2>Featured Restaurants</h2>
+      <div class="restaurant-list">
+        <app-restaurant-detail
+          *ngFor="let restaurant of featuredRestaurants"
+          [detail]="restaurant">
+        </app-restaurant-detail>
+      </div>
+    </section>
+  
+   
+    <section class="user-reviews">
+      <h2>Recent Reviews</h2>
+      <div class="review-cards">
+        <div *ngFor="let review of recentReviews" class="review-card">
+          <p>"{{ review.content }}"</p>
+          
+          <p><strong> {{ review.createdOn | date }}</strong></p>
+          <p><strong> {{ review.rating }} / 5 Rating</strong></p>
+        </div>
+      </div>
+    </section>
+  
+  </div>
+  

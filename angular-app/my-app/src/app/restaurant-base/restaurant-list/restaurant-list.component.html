@@ -1,3 +1,15 @@
+<!-- SEARCH BAR -->
+<div class="search-bar-container">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search restaurants..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()"
+  />
+</div>
+
+<!-- FILTER -->
 <div class="filters">
   <label for="type">Type:</label>
   <select id="type" [(ngModel)]="selectedType" (change)="applyFilters()">
@@ -12,7 +24,7 @@
   </select>
 </div>
 
-
+<!-- Restaurant list display -->
 <div class="restaurant-list">
   <app-restaurant-detail
     *ngFor="let restaurant of restaurants"

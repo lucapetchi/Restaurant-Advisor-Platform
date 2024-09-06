@@ -18,7 +18,7 @@ export class HeaderComponent {
     
   }
   nav = [
-    { name: 'Auth ', link: '', exact: true},
+    { name: 'Authentication ', link: '', exact: true},
     { name: 'Home', link: '/home', exact: true },
     { name: 'Restaurants', link: '/restaurant', exact: false },
     //{ name: 'About', link: '/about', exact: false },

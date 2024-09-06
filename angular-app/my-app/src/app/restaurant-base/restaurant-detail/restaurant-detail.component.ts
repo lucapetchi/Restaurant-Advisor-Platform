@@ -37,7 +37,7 @@ export class RestaurantDetailComponent implements OnInit, AfterContentInit {
   }
   private imageBaseUrl = 'http://192.168.1.133:8080/images/restaurants/';
 
-  // Method to get the full image URL
+  // functie pentru a gasi image url in functie de numele restaurantului : Ex: alt-shift =>url/alt-shift.jpg
   getImageUrl(name: string): string {
     return `${this.imageBaseUrl}${name}.jpg`;
   }

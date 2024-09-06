@@ -20,11 +20,12 @@ export class RestaurantListComponent implements OnInit, AfterViewInit, AfterCont
   pageSize: number = 6;
   totalCount: number = 0;
 
-  types: string[] = ["Italian","Romanesc","Mediterranean","Turkish","British","German","International","European"];           // pentru filtre 
+  types: string[] = ["Italian","Romanesc","Mediterranean","Turkish","British","German","International","European"];           // pentru filtre.. deocamdata hardcodat:(
   priceRatings: number[] = [1, 2, 3, 4, 5]; 
   selectedType: string = '';
   selectedPriceRating: number | null = null;
 
+  searchTerm: string = '';
   constructor(private restaurantService : RestaurantService, private renderer: Renderer2) { 
     
     
@@ -116,15 +117,20 @@ export class RestaurantListComponent implements OnInit, AfterViewInit, AfterCont
     
   }
  
-  loadRestaurants(): void {
-    this.restaurantService.getRestaurants(this.currentPage, this.pageSize, this.selectedType, this.selectedPriceRating)
-      .subscribe((data: Restaurant[]) => {
-        this.restaurants = data;
-        // Handle totalCount if you have a way to get the total number of items
-        // e.g., you might need an additional API call or modify the existing API to return total count
-      });
+  loadRestaurants(searchTerm: string = ''): void {
+    this.restaurantService.getRestaurants(
+      this.currentPage,
+      this.pageSize,
+      this.searchTerm,
+      this.selectedType,
+      this.selectedPriceRating
+    ).subscribe((data: Restaurant[]) => {
+      this.restaurants = data;
+    });
   }
-
+  onSearch(): void {
+    this.loadRestaurants(this.searchTerm); // Call the loadRestaurants method with the current search term
+  }
   nextPage(): void {
     this.currentPage++;
     this.loadRestaurants();

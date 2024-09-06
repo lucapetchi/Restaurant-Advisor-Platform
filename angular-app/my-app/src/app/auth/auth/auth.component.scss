@@ -15,7 +15,17 @@
     transition: background-color 0.3s ease;
     min-width: 150px;
   }
-  
+  .alert-success {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #d4edda;
+    color: #155724;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   .btn-login {
     background-color: #4CAF50; /* TripAdvisor-like green */
     color: white;

@@ -2,8 +2,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-
-
 import { Restaurant } from '../models/restaurant';
 import { AuthService } from './auth.service';
 
@@ -38,12 +36,16 @@ addRestaurant(body: any): Observable<Restaurant> {
 //   return this.http.get<Restaurant[]>(RESTAURANT_API, {
 //     headers: this.getAuthHeaders(),
 //     params: params
-//   });
+//   }); 
 // }
+
+// metode vechi
+
 
 getRestaurants(
   pageNumber: number, 
   pageSize: number, 
+  searchTerm?: string,  // parametrii folositi pentru filtrare, search ,paginare
   type?: string, 
   priceRating?: number | null
 ): Observable<Restaurant[]> {
@@ -51,11 +53,15 @@ getRestaurants(
     .set('PageNumber', pageNumber.toString())
     .set('PageSize', pageSize.toString());
 
-  if (type) {
-    params = params.set('Type', type);
+  if (searchTerm) {
+    params = params.set('Name', searchTerm); // Pentru search bar 
   }
 
-  if (priceRating !== undefined && priceRating !== null) {
+  if (type) {
+    params = params.set('Type', type); // Filtrare cu type
+  }
+
+  if (priceRating !== undefined && priceRating !== null) {  // Filtrare cu price rating
     params = params.set('PriceRating', priceRating.toString());
   }
 
@@ -68,8 +74,6 @@ getRestaurants(
 deleteRestaurant(id: string): Observable<Restaurant> {
   return this.http.delete<Restaurant>(`${RESTAURANT_API}/${id}`); 
 }
-
-
 
 editRestaurant(id: string, body: Restaurant): Observable<Restaurant> {
   console.log(id.toString());

@@ -56,12 +56,12 @@ export class RestaurantPageComponent implements OnInit {
     if (this.currentUser) {
       this.newComment.appUser = this.currentUser;
       this.newComment.restaurant=this.restaurant;
-      this.newComment.appUserId = this.currentUser.userName; // Set the user who is making the comment
-      this.newComment.restaurantId = restaurantId; // Set the restaurant ID
+      this.newComment.appUserId = this.currentUser.userName; // Setez new comment si il resetez
+      this.newComment.restaurantId = restaurantId; 
       this.commentService.createComment(restaurantId, this.newComment).subscribe(
         (comment) => {
           console.log('Comment added successfully', comment);
-          // Optionally reset the form or update the UI
+          // New comment reset 
           this.newComment = {
             id: 0,
             title: '',
@@ -97,5 +97,10 @@ export class RestaurantPageComponent implements OnInit {
       window.location.reload();
     }, 500);
   }
+  private imageBaseUrl = 'http://192.168.1.133:8080/images/restaurants/';
 
+  
+  getImageUrl(name: string): string {
+    return `${this.imageBaseUrl}${name}.jpg`; // functie pentru a gasi image url in functie de numele restaurantului : Ex: alt-shift =>url/alt-shift.jpg
+  }
 }
